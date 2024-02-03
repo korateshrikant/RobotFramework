@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.8.2 on win32)" generated="2024-02-02T23:05:42.928158" rpa="false" schemaversion="5">
+<suite id="s1" name="DDTBuiltin" source="C:\Users\Administrator\PycharmProjects\AutomationRobotFramework\Tests\TestCases\DDTBuiltin.robot">
+<kw name="Start testCase" owner="common" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-02-02T23:05:43.154199" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-02-02T23:05:43.154199" elapsed="2.870628"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-02-02T23:05:46.025823" elapsed="0.144753"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-02-02T23:05:48.177798" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-02-02T23:05:46.172203" elapsed="2.005595"/>
+</kw>
+<status status="PASS" start="2024-02-02T23:05:43.153198" elapsed="5.025609"/>
+</kw>
+<test id="s1-t1" name="Verify login fails - Blank Username and Password" line="11">
+<kw name="Invalid Login Scenarios">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-02-02T23:05:48.189797" level="FAIL">Variable '${textbox_username}' not found.</msg>
+<arg>${textbox_username}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="FAIL" start="2024-02-02T23:05:48.186793" elapsed="0.003004">Variable '${textbox_username}' not found.</status>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>${textbox_password}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-02-02T23:05:48.189797" elapsed="0.000992"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>${login_btn}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-02-02T23:05:48.190789" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2024-02-02T23:05:48.191789" elapsed="0.000000"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<arg>${txt_error}</arg>
+<arg>${error_msg}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="NOT RUN" start="2024-02-02T23:05:48.191789" elapsed="0.000000"/>
+</kw>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>Epic sadface: Username is required</arg>
+<status status="FAIL" start="2024-02-02T23:05:48.181792" elapsed="0.009997">Variable '${textbox_username}' not found.</status>
+</kw>
+<status status="FAIL" start="2024-02-02T23:05:48.178807" elapsed="0.014983">Variable '${textbox_username}' not found.</status>
+</test>
+<test id="s1-t2" name="Verify login fails - Wrong username" line="12">
+<kw name="Invalid Login Scenarios">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-02-02T23:05:48.200787" level="FAIL">Variable '${textbox_username}' not found.</msg>
+<arg>${textbox_username}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="FAIL" start="2024-02-02T23:05:48.198787" elapsed="0.002000">Variable '${textbox_username}' not found.</status>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>${textbox_password}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-02-02T23:05:48.201786" elapsed="0.000000"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>${login_btn}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-02-02T23:05:48.201786" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2024-02-02T23:05:48.201786" elapsed="0.000000"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<arg>${txt_error}</arg>
+<arg>${error_msg}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="NOT RUN" start="2024-02-02T23:05:48.202787" elapsed="0.000000"/>
+</kw>
+<arg>standard_us</arg>
+<arg>secret_sauce</arg>
+<arg>Epic sadface: Username and password do not match any user in this service</arg>
+<status status="FAIL" start="2024-02-02T23:05:48.198787" elapsed="0.004000">Variable '${textbox_username}' not found.</status>
+</kw>
+<status status="FAIL" start="2024-02-02T23:05:48.196785" elapsed="0.007001">Variable '${textbox_username}' not found.</status>
+</test>
+<test id="s1-t3" name="Verify login fails - Locked out user" line="13">
+<kw name="Invalid Login Scenarios">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-02-02T23:05:48.210786" level="FAIL">Variable '${textbox_username}' not found.</msg>
+<arg>${textbox_username}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="FAIL" start="2024-02-02T23:05:48.209799" elapsed="0.001990">Variable '${textbox_username}' not found.</status>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>${textbox_password}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-02-02T23:05:48.211789" elapsed="0.000000"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>${login_btn}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-02-02T23:05:48.211789" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2024-02-02T23:05:48.212821" elapsed="0.000000"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<arg>${txt_error}</arg>
+<arg>${error_msg}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="NOT RUN" start="2024-02-02T23:05:48.212821" elapsed="0.000000"/>
+</kw>
+<arg>locked_out_user</arg>
+<arg>secret_sauce</arg>
+<arg>Epic sadface: Sorry, this user has been locked out.</arg>
+<status status="FAIL" start="2024-02-02T23:05:48.207788" elapsed="0.005033">Variable '${textbox_username}' not found.</status>
+</kw>
+<status status="FAIL" start="2024-02-02T23:05:48.206785" elapsed="0.007021">Variable '${textbox_username}' not found.</status>
+</test>
+<test id="s1-t4" name="Verify login fails - Wrong password" line="14">
+<kw name="Invalid Login Scenarios">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-02-02T23:05:48.218819" level="FAIL">Variable '${textbox_username}' not found.</msg>
+<arg>${textbox_username}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="FAIL" start="2024-02-02T23:05:48.217819" elapsed="0.001000">Variable '${textbox_username}' not found.</status>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>${textbox_password}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-02-02T23:05:48.218819" elapsed="0.000000"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>${login_btn}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-02-02T23:05:48.219839" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2024-02-02T23:05:48.219839" elapsed="0.000000"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<arg>${txt_error}</arg>
+<arg>${error_msg}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="NOT RUN" start="2024-02-02T23:05:48.219839" elapsed="0.000000"/>
+</kw>
+<arg>standard_user</arg>
+<arg>secret_sau</arg>
+<arg>Epic sadface: Username and password do not match any user in this service</arg>
+<status status="FAIL" start="2024-02-02T23:05:48.216818" elapsed="0.003021">Variable '${textbox_username}' not found.</status>
+</kw>
+<status status="FAIL" start="2024-02-02T23:05:48.216212" elapsed="0.004609">Variable '${textbox_username}' not found.</status>
+</test>
+<test id="s1-t5" name="Verify login fails - Wrong username and password" line="15">
+<kw name="Invalid Login Scenarios">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-02-02T23:05:48.225827" level="FAIL">Variable '${textbox_username}' not found.</msg>
+<arg>${textbox_username}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="FAIL" start="2024-02-02T23:05:48.224820" elapsed="0.001007">Variable '${textbox_username}' not found.</status>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>${textbox_password}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-02-02T23:05:48.225827" elapsed="0.000000"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>${login_btn}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-02-02T23:05:48.225827" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2024-02-02T23:05:48.226822" elapsed="0.000000"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<arg>${txt_error}</arg>
+<arg>${error_msg}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="NOT RUN" start="2024-02-02T23:05:48.226822" elapsed="0.000000"/>
+</kw>
+<arg>standard_us</arg>
+<arg>secret_sau</arg>
+<arg>Epic sadface: Username and password do not match any user in this service</arg>
+<status status="FAIL" start="2024-02-02T23:05:48.223823" elapsed="0.002999">Variable '${textbox_username}' not found.</status>
+</kw>
+<status status="FAIL" start="2024-02-02T23:05:48.223166" elapsed="0.004614">Variable '${textbox_username}' not found.</status>
+</test>
+<kw name="Finish testCase" owner="common" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-02-02T23:05:48.229780" elapsed="2.678883"/>
+</kw>
+<status status="PASS" start="2024-02-02T23:05:48.229780" elapsed="2.678883"/>
+</kw>
+<status status="FAIL" start="2024-02-02T23:05:42.931203" elapsed="7.978464"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="5" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="5" skip="0" id="s1" name="DDTBuiltin">DDTBuiltin</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-02-02T23:05:43.150201" level="ERROR">Error in file 'C:\Users\Administrator\PycharmProjects\AutomationRobotFramework\Tests\TestCases\DDTBuiltin.robot' on line 4: Error in file 'C:\Users\Administrator\PycharmProjects\AutomationRobotFramework\Tests\TestCases\DDTDemo.robot' on line 12: Resource file with 'Test Cases' section is invalid.</msg>
+</errors>
+</robot>
